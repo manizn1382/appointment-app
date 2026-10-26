@@ -11,3 +11,4 @@ from .Model import (
     TimeSlot,
     Payment,
 )
+from .Model.Profile import User

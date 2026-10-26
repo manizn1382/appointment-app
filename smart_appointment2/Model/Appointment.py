@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from .TimeModel import TimeModel
 from .TimeSlot import TimeSlot
-
+from django.conf import settings
 
 class Appointment(TimeModel):
 
@@ -17,7 +17,7 @@ class Appointment(TimeModel):
 
 
 
-    patient = models.ForeignKey(User, on_delete=models.CASCADE)
+    patient = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     timeSlot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
     status = models.CharField(choices=STATUS, default='pending', max_length=9)
     trackingCode = models.UUIDField(blank=True)
