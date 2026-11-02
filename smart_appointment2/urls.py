@@ -17,11 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from smart_appointment2.Views.ClinicViews import ClinicActions
+from smart_appointment2.Views.UserViews import UserActions
+from smart_appointment2.Views.DoctorViews import DoctorActions
+from smart_appointment2.Views.SpecialtyViews import SpecialtyActions
+
 from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
 router.register('clinic', ClinicActions, basename='clinic')
+router.register('user', UserActions, basename='user')
+router.register('doctor', DoctorActions, basename='doctor')
+router.register('specialty', SpecialtyActions, basename='specialty')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
