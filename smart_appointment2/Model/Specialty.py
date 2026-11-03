@@ -8,3 +8,6 @@ class Specialty(models.Model):
 
     class Meta:
         db_table = "Specialty"
+
+    def __str__(self):
+        return self.name

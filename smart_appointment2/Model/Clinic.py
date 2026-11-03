@@ -3,7 +3,6 @@ from .TimeModel import TimeModel
 
 
 class Clinic(TimeModel):
-
     name = models.CharField(max_length=255)
     address = models.TextField()
     phoneNumber = models.CharField(max_length=13)
@@ -11,3 +10,6 @@ class Clinic(TimeModel):
 
     class Meta:
         db_table = "Clinic"
+
+    def __str__(self):
+        return self.name
