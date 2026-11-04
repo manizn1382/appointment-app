@@ -12,3 +12,6 @@ class ClinicService(TimeModel):
     class Meta:
         db_table = "ClinicService"
 
+    def __str__(self):
+        return self.clinic.name+" "+self.name
+

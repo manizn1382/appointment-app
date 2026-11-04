@@ -1,12 +1,10 @@
-
 from django.db import models
-from django.contrib.auth.models import User
 from .TimeModel import TimeModel
 from .TimeSlot import TimeSlot
 from django.conf import settings
 
-class Appointment(TimeModel):
 
+class Appointment(TimeModel):
     STATUS = [
         ('completed', 'COMPLETED'),
         ('cancelled', 'CANCELLED'),
@@ -14,8 +12,6 @@ class Appointment(TimeModel):
         ('pending', 'PENDING'),
 
     ]
-
-
 
     patient = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     timeSlot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
