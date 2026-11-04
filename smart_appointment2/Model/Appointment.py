@@ -19,7 +19,7 @@ class Appointment(TimeModel):
     trackingCode = models.UUIDField(blank=True)
     notes = models.TextField(blank=True)
     idempotency_key = models.CharField(blank=True, max_length=255)
-    cancelledAt = models.DateTimeField(blank=True)
+    cancelledAt = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         db_table = "Appointment"

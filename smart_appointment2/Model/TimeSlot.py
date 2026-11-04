@@ -22,3 +22,6 @@ class TimeSlot(TimeModel):
     class Meta:
         db_table = "TimeSlot"
 
+    def __str__(self):
+        return self.doctor.user.username+" "+self.clinicService.name+" "+str(self.startAt)+"<--->"+str(self.endAt)
+
