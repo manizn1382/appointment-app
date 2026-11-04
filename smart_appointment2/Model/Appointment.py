@@ -23,3 +23,6 @@ class Appointment(TimeModel):
 
     class Meta:
         db_table = "Appointment"
+
+    def __str__(self):
+        return self.patient.username + " " + self.timeSlot.doctor.user.username

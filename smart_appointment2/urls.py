@@ -26,6 +26,7 @@ from smart_appointment2.Views.DoctorAvailabilityViews import DocAvailabilityActi
 from smart_appointment2.Views.ClinicDoctorsViews import ClinicDocActions
 from smart_appointment2.Views.TimeSlotViews import TimeSlotActions
 from smart_appointment2.Views.AppointmentViews import AppointmentActions
+from smart_appointment2.Views.PaymentViews import PayActions
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
@@ -39,6 +40,7 @@ router.register('doctorAvailability', DocAvailabilityActions, basename='doctorAv
 router.register('clinicDoctors', ClinicDocActions, basename='clinicDoctors')
 router.register('timeSlot', TimeSlotActions, basename='timeSlot')
 router.register('appointmentService', AppointmentActions, basename='appointmentService')
+router.register('paymentService', PayActions, basename='paymentService')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
